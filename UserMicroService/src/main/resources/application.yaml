@@ -1,0 +1,29 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: USER-SERVICE
+  zipkin:
+    base-url: http://127.0.0.1:9411
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5433/userMicroService
+    password: P@$$W0rd1
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+
+welcome:
+  message: Welcome to my website
